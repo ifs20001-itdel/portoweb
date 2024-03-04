@@ -1,6 +1,4 @@
-// pages/_app.js
-
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '../components/Layout';
 import '../styles/globals.css';
@@ -9,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  const [audio, setAudio] = useState(null);
 
   useEffect(() => {
     // Memuat font setelah komponen pertama kali dirender
@@ -22,6 +21,40 @@ function MyApp({ Component, pageProps }) {
       document.head.removeChild(link);
     };
   }, []);
+
+  useEffect(() => {
+    if (!audio) {
+      // Deklarasi Audio saat komponen pertama kali dirender di sisi klien
+      setAudio(new Audio('/musik.mp3'));
+    } else {
+      // Set volume default menjadi 50%
+      audio.volume = 0.5;
+      // Memainkan musik saat komponen pertama kali dirender
+      audio.play();
+    }
+
+    // Membersihkan musik saat komponen dibongkar
+    return () => {
+      if (audio) {
+        audio.pause();
+      }
+    };
+  }, [audio]);
+
+  useEffect(() => {
+    // Memainkan ulang musik saat pengguna berpindah halaman
+    const handleRouteChange = () => {
+      if (audio) {
+        audio.play();
+      }
+    };
+
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events, audio]);
 
   return (
     <Layout>

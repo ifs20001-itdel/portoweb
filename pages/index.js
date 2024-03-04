@@ -29,7 +29,7 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-2 xl:mb-16"
           >
-            Welcome to my website, where the narrative revolves around me, the protagonist. Here, you'll discover my journey—filled with highs and lows, victories and challenges. Each page unveils a piece of my story, offering insight into who I am and what drives me. Join me as we explore together.
+            Welcome to my website, where the narrative revolves around me, the protagonist. Here, you will discover my journey—filled with highs and lows, victories and challenges. Each page unveils a piece of my story, offering insight into who I am and what drives me. Join me as we explore together.
           </motion.p>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />

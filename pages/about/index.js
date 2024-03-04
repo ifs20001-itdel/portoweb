@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-
-// icons
 import { FaNodeJs, FaLaravel, FaBootstrap, FaFigma } from 'react-icons/fa'
-
 import {
   SiNextdotjs,
   SiExpress,
@@ -20,144 +17,142 @@ import {
   SiKatacoda,
   SiPostman
 } from 'react-icons/si'
-
-//  data
-const aboutData = [
-  {
-    title: 'education',
-    info: [
-      {
-        title: 'Institut Teknologi Del (IPK 3.63) - Laguboti',
-        stage: 'Aug 2020 - Oct 2024'
-      },
-      {
-        title: 'SMA Negeri 1 Tarutung - Top 10 best students',
-        stage: 'Jun 2017 - Jun 2020'
-      },
-      {
-        title: 'SMP NEGERI 3 Tarutung - Top 5 best students',
-        stage: 'Jun 2014 - Jun 2017'
-      },
-      {
-        title: 'SD Swasta Filadelfia - Top 5 best students',
-        stage: 'Jun 2008 - Jun 2014'
-      }
-    ]
-  },
-  {
-    title: 'skills',
-    info: [
-      {
-        title: 'Backend',
-        icons: [
-          <SiExpress />,
-          <FaNodeJs />,
-          <SiPostgresql />,
-          <SiSequelize />,
-          <FaLaravel />,
-          <SiMysql />,
-          <SiMongodb />,
-          <SiGoland />
-        ]
-      },
-      {
-        title: 'Frontend',
-        icons: [
-          <SiReact />,
-          <SiNextdotjs />,
-          <FaBootstrap />,
-          <SiTailwindcss />,
-          <SiHtml5 />,
-          <SiJavascript />,
-          <SiCss3 />
-        ]
-      },
-      {
-        title: 'UI / UX',
-        icons: [<FaFigma />, <SiCanva />]
-      },
-      {
-        title: 'Testing',
-        icons: [<SiPostman />]
-      }
-    ]
-  },
-  {
-    title: 'experience',
-    info: [
-      {
-        title: 'Fullstack Web Developer - Bold & Underline',
-        stage: 'JUN 2023 - AUG 2023'
-      },
-      {
-        title: 'Fullstack Web - Rakamin Academy',
-        stage: 'AUG 2023 - JAN 2024'
-      },
-      {
-        title: 'Intern - BTPN Syariah Fullstack Developer',
-        stage: 'DES 2023 - JAN 2024'
-      }
-    ]
-  },
-  {
-    title: 'credentials',
-    info: [
-      {
-        title: 'Full Stack Web Development, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      },
-      {
-        title: 'BTPN Syariah Fullstack Developer, BTPN Syariah',
-        stage: '2023'
-      },
-      {
-        title: ' Data Science, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      },
-      {
-        title: 'Design Thinking, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      },
-      {
-        title:
-          'Kickstart Fullstack Web Development Journey, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      },
-      {
-        title:
-          'Full Stack Web Development EXCELLENT GRADE, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      },
-      {
-        title: ' Product Management, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      },
-      {
-        title:
-          ' Product Management EXCELLENT GRADE, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      },
-      {
-        title: 'Teamwork Journey, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      },
-      {
-        title: 'UI UX Design, PT.Rakamin Kolektif Madani',
-        stage: '2023'
-      }
-    ]
-  }
-]
-
 import Avatar from '../../components/Avatar'
 import Circles from '../../components/Circles'
 import { motion } from 'framer-motion'
 import { fadeIn } from '../../variants'
-
 import CountUp from 'react-countup'
 
 const About = () => {
   const [index, setIndex] = useState(0)
+
+  const aboutData = [
+    {
+      title: 'education',
+      info: [
+        {
+          title: 'Institut Teknologi Del (IPK 3.63) - Laguboti',
+          stage: 'Aug 2020 - Oct 2024'
+        },
+        {
+          title: 'SMA Negeri 1 Tarutung - Top 10 best students',
+          stage: 'Jun 2017 - Jun 2020'
+        },
+        {
+          title: 'SMP NEGERI 3 Tarutung - Top 5 best students',
+          stage: 'Jun 2014 - Jun 2017'
+        },
+        {
+          title: 'SD Swasta Filadelfia - Top 5 best students',
+          stage: 'Jun 2008 - Jun 2014'
+        }
+      ]
+    },
+    {
+      title: 'skills',
+      info: [
+        {
+          title: 'Backend',
+          icons: [
+            <SiExpress key="SiExpress" />,
+            <FaNodeJs key="FaNodeJs" />,
+            <SiPostgresql key="SiPostgresql" />,
+            <SiSequelize key="SiSequelize" />,
+            <FaLaravel key="FaLaravel" />,
+            <SiMysql key="SiMysql" />,
+            <SiMongodb key="SiMongodb" />,
+            <SiGoland key="SiGoland" />
+          ]
+        },
+        {
+          title: 'Frontend',
+          icons: [
+            <SiReact key="SiReact" />,
+            <SiNextdotjs key="SiNextdotjs" />,
+            <FaBootstrap key="FaBootstrap" />,
+            <SiTailwindcss key="SiTailwindcss" />,
+            <SiHtml5 key="SiHtml5" />,
+            <SiJavascript key="SiJavascript" />,
+            <SiCss3 key="SiCss3" />
+          ]
+        },
+        {
+          title: 'UI / UX',
+          icons: [<FaFigma key="FaFigma" />, <SiCanva key="SiCanva" />]
+        },
+        {
+          title: 'Testing',
+          icons: [<SiPostman key="SiPostman" />]
+        }
+      ]
+    },
+    {
+      title: 'experience',
+      info: [
+        {
+          title: 'Fullstack Web Developer - Bold & Underline',
+          stage: 'JUN 2023 - AUG 2023'
+        },
+        {
+          title: 'Fullstack Web - Rakamin Academy',
+          stage: 'AUG 2023 - JAN 2024'
+        },
+        {
+          title: 'Intern - BTPN Syariah Fullstack Developer',
+          stage: 'DES 2023 - JAN 2024'
+        }
+      ]
+    },
+    {
+      title: 'credentials',
+      info: [
+        {
+          title: 'Full Stack Web Development, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        },
+        {
+          title: 'BTPN Syariah Fullstack Developer, BTPN Syariah',
+          stage: '2023'
+        },
+        {
+          title: ' Data Science, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        },
+        {
+          title: 'Design Thinking, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        },
+        {
+          title:
+            'Kickstart Fullstack Web Development Journey, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        },
+        {
+          title:
+            'Full Stack Web Development EXCELLENT GRADE, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        },
+        {
+          title: ' Product Management, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        },
+        {
+          title:
+            ' Product Management EXCELLENT GRADE, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        },
+        {
+          title: 'Teamwork Journey, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        },
+        {
+          title: 'UI UX Design, PT.Rakamin Kolektif Madani',
+          stage: '2023'
+        }
+      ]
+    }
+  ]
+
   return (
     <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
       <Circles />
@@ -183,7 +178,7 @@ const About = () => {
             exit='hidden'
             className='h2 text-[40px] xl:mx-[90px]'
           >
-            It's <span className='text-accent text-[40px]'>A Part</span> About Me
+            It is <span className='text-accent text-[40px]'>A Part</span> About Me
           </motion.h2>
 
           <motion.p
@@ -198,35 +193,6 @@ const About = () => {
             field of Information Technology, particularly in website
             development.
           </motion.p>
-
-          {/* <div className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8">
-            <div className="flex flex-1 xl:gap-x-6">
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4 max-w-[100px">TEst</div>
-              </div>
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4 max-w-[100px">TEst</div>
-              </div>
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4 max-w-[100px">TEst</div>
-              </div>
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4 max-w-[100px">TEst</div>
-              </div>
-            </div>
-          </div> */}
         </div>
 
         <motion.div
@@ -263,8 +229,8 @@ const About = () => {
                   <div className='hidden md:flex'>-</div>
                   <div className='text-[15px]'>{item.stage}</div>
                   <div className='flex gap-x-4'>
-                    {item.icons?.map((icon, itemIndex) => {
-                      return <div className='text-2xl text-white'>{icon}</div>
+                    {item.icons?.map((icon, iconIndex) => {
+                      return <div key={iconIndex} className='text-2xl text-white'>{icon}</div>
                     })}
                   </div>
                 </div>

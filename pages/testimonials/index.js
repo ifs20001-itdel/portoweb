@@ -34,11 +34,11 @@ const Testimonials = () => {
             <p
               class="leading-relaxed text-[15px]"
             >
-              "Highly recommend this service! The team went above and beyond to
+              Highly recommend this service! The team went above and beyond to
               meet my needs. From start to finish, they were professional,
-              efficient, and friendly. I'm extremely satisfied with the results
+              efficient, and friendly. I am extremely satisfied with the results
               and will definitely be using their services again in the future.
-              Thank you for your excellent work!"
+              Thank you for your excellent work!
             </p>
             <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-8 mb-6"></span>
             <h2 class="text-white-900 font-medium title-font tracking-wider text-[15px]">

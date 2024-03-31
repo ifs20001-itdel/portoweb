@@ -19,8 +19,8 @@ const Testimonials = () => {
         >
           <Avatar />
         </motion.div>
-        <div class="container" style={{
-          margin: '15% auto'
+        <div class="container max-sm" style={{
+          margin: '200px auto'
         }}>
           <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
             <svg
